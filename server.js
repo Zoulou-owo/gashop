@@ -6,7 +6,7 @@ const bodyParser = require("body-parser");
 const bcrypt = require('bcrypt');
 const { Db } = require('mongodb');
 
-mongoose.connect('mongodb+srv://admin:lucasthomas@gashop.bnze7.mongodb.net/GaShop?retryWrites=true&w=majority', { useNewUrlParser: true }, { useUnifiedTopology: true });
+mongoose.connect();
 
 const accSchema = {
   email: {type: String, unique: [true, 'Email déjà prise']},
