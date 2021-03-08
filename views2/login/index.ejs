@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html class="has-background-grey-lighter">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GaShop</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <script src="https://kit.fontawesome.com/cf09742b69.js" crossorigin="anonymous"></script>
+
+  </head>
+
+  <body>
+
+    <%- include('../navbar.ejs') %>
+
+    <section class="hero is-info is-fullheight has-background-grey-lighter">
+      <div class="hero-body">
+       <div class="container">
+         <div class="columns is-centered">
+           <div class="column is-5-tablet is-4-desktop is-3-widescreen">
+             <form class="box" method="POST" action="/login" name="/login">
+               <div class="field has-text-centered">
+                 <img src="/assets/gashopb.png" alt="Logo" width="128" height="128">
+               </div>
+               <div class="field">
+                 <label for="username" class="label">
+                   Pseudo
+                 </label>
+                 <div class="control has-icons-left">
+                   <input type="username" name="username" id="username" placeholder="Votre pseudo" class="input" required>
+                   <span class="icon is-small is-left">
+                     <i class="fa fa-user"></i>
+                   </span>
+                 </div>
+               </div>
+               <div class="field">
+                <label for="password" class="label">
+                  Mot de passe
+                </label>
+                <div class="control has-icons-left">
+                  <input type="password" name="password" id="password" placeholder="********" class="input">
+                  <span class="icon is-small is-left">
+                    <i class="fa fa-key"></i>
+                  </span>
+                </div>
+              </div>
+                <div class="field">
+                  <button class="button is-success is-outlined">
+                    Se connecter
+                  </button>
+                </div>
+                <button onclick="goto()" class="button is-grey is-outlined" >
+                  Retour à l'acceuil
+                </button>
+                <p>
+                  Pas encore inscrit(e) ?
+                </p>
+                <a href="/register">
+                 Inscrivez-vous 
+                </a>
+              </div>
+             </form>
+           </div>
+         </div>
+       </div>
+      </div>
+    </section>
+    <script type="text/javascript">
+      function goto() {
+        document.location.href="/"
+      }
+    </script>
+
+    <%- include('../footer.ejs') %>
+
+  </body>
+
+</html>

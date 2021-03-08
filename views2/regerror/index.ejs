@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html class="has-background-grey-lighter">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GaShop</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <script src="https://kit.fontawesome.com/cf09742b69.js" crossorigin="anonymous"></script>
+
+  </head>
+
+  <body>
+
+    <%- include('../navbar.ejs') %>
+
+    <section class="hero is-info is-fullheight has-background-grey-lighter">
+      <div class="hero-body">
+       <div class="container">
+         <div class="columns is-centered">
+           <div class="column is-5-tablet is-4-desktop is-3-widescreen">
+             <form class="box" method="POST" action="/register">
+              <div class="hero is-danger">
+                <div class="hero-body">
+                  <p class="has-text-grey">
+                    Une erreur est survenue !
+                    Il semblerait que le pseudo ou l'adresse mail soit déjà utlisés.
+                  </p>
+                </div>
+              </div>
+               <div class="field has-text-centered">
+                 <img src="/assets/anime.gif" alt="Logo" width="128" height="128">
+               </div>
+               <div class="field">
+                 <label for="email" class="label">
+                   Email
+                 </label>
+                 <div class="control has-icons-left">
+                   <input type="email" name="email" id="email" placeholder="votre@email.com" class="input" required>
+                   <span class="icon is-small is-left">
+                     <i class="fa fa-at"></i>
+                   </span>
+                 </div>
+               </div>
+               <div class="field">
+                <label for="username" class="label">
+                  Pseudo
+                </label>
+                <div class="control has-icons-left">
+                  <input type="text" name="pseudo" id="username" placeholder="Votre Pseudo" class="input" required>
+                  <span class="icon is-small is-left">
+                    <i class="fa fa-male"></i>
+                  </span>
+                </div>
+                <div class="field">
+                  <label for="password" class="label">
+                    Mot De Passe
+                  </label>
+                  <div class="control has-icons-left">
+                    <input type="password" name="password" id="password" placeholder="********" class="input" required>
+                    <span class="icon is-small is-left">
+                      <i class="fa fa-lock"></i>
+                    </span>
+                  </div>
+                </div>
+                <div class="field">
+                  <button class="button is-success is-outlined">
+                    S'inscrire
+                  </button>
+                </div>
+                <button onclick="goto()" class="button is-grey is-outlined" >
+                  Retour à l'acceuil
+                </button>
+              </div>
+             </form>
+           </div>
+         </div>
+       </div>
+      </div>
+    </section>
+    <script>
+      function goto() {
+        document.location.href="/"
+      };
+    </script>
+
+    <%- include('../footer.ejs') %>
+
+  </body>
+
+</html>
